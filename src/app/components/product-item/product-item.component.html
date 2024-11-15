@@ -1,1 +1,32 @@
-<p>product-item works!</p>
+<div class="product-card">
+  <div class="product-info">
+    <div class="info-row">
+      <span class="label">Вес</span>
+      <span class="value">{{ this.product.weight }} г</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Цена</span>
+      <span class="value">{{ this.product.price }} ₽</span>
+    </div>
+  </div>
+  <div
+    class="price-badge"
+    [ngClass]="{
+      'best-price': product.isBestPrice,
+      'worst-price': product.isBestPrice == false
+    }"
+  >
+    <span>{{ this.product?.description }}</span>
+    <span class="price"
+      >{{ this.product.pricePerUnit | number : "1.0-0" }} ₽/кг</span
+    >
+    @if(this.product.isBestPrice == true){
+    <span class="best-price">Лучшая цена!</span>
+    }@if(!!this.product.priceDifference){
+    <span class="worst-price"
+      >{{ this.product.priceDifference | number : "1.0-0" }} % переплаты</span
+    >
+    }
+  </div>
+  <button class="close-btn" (click)="removeItem(this.product)">&times;</button>
+</div>
