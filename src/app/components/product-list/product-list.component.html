@@ -1,2 +1,5 @@
-<p>product-list works!</p>
-<app-product-item></app-product-item>
+<section class="products">
+  @for (product of this.productsItems(); track $index) {
+  <app-product-item [product]="product"></app-product-item>
+  }
+</section>

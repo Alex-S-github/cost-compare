@@ -1,0 +1,11 @@
+<form class="new-product" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label for="weight">Вес: </label>
+  <input id="weight" type="number" formControlName="weight" />
+  <label for="price">Цена: </label>
+  <input id="price" type="number" formControlName="price" />
+  <label for="description">Описание: </label>
+  <input id="description" type="text" formControlName="description" />
+  <button type="submit" [disabled]="!productForm.valid">Добавить</button>
+</form>
+
+<div class="input-group"></div>
