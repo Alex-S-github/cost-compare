@@ -1,11 +1,3 @@
 <app-header> </app-header>
 <app-product-list></app-product-list>
-<section class="add-products">
-  <div (click)="this.isShowProductForm = !this.isShowProductForm">
-    Добавить Продукт
-  </div>
-  @if(this.isShowProductForm) {
-  <app-product-form></app-product-form>
-
-  }
-</section>
+<app-product-form></app-product-form>
