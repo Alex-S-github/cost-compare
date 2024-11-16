@@ -18,12 +18,14 @@ import { IProduct } from '../../interfaces/product.interface';
 export class ProductFormComponent {
   productService = inject(ProductService);
 
+  isShowProductForm: boolean = false;
+
   productForm = new FormGroup({
-    weight: new FormControl<number>(0, {
+    weight: new FormControl<number | null>(null, {
       nonNullable: true,
       validators: Validators.required,
     }),
-    price: new FormControl<number>(0, {
+    price: new FormControl<number | null>(null, {
       nonNullable: true,
       validators: Validators.required,
     }),

@@ -1,11 +1,49 @@
-<form class="new-product" [formGroup]="productForm" (ngSubmit)="onSubmit()">
-  <label for="weight">Вес: </label>
-  <input id="weight" type="number" formControlName="weight" />
-  <label for="price">Цена: </label>
-  <input id="price" type="number" formControlName="price" />
-  <label for="description">Описание: </label>
-  <input id="description" type="text" formControlName="description" />
-  <button type="submit" [disabled]="!productForm.valid">Добавить</button>
-</form>
+<section class="add-products">
+  @if(!this.isShowProductForm){
+  <button
+    (click)="this.isShowProductForm = !this.isShowProductForm"
+    class="add-product"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#6d8ffc"
+    >
+      <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+    </svg>
+    Добавить Продукт
+  </button>
+  } @else {
 
-<div class="input-group"></div>
+  <form class="form-product" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="weight">Вес (г):</label>
+      <input id="weight" type="number" formControlName="weight" />
+    </div>
+    <div class="form-field">
+      <label for="price">Цена: </label>
+      <input id="price" type="number" formControlName="price" />
+      <span class="currency-symbol">₽</span>
+    </div>
+    <div class="form-field">
+      <label for="description">Описание: </label>
+      <input id="description" type="text" formControlName="description" />
+    </div>
+
+    <button class="add-product" [disabled]="!productForm.valid" type="submit">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#6d8ffc"
+      >
+        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+      </svg>
+      Добавить Продукт
+    </button>
+  </form>
+  }
+</section>

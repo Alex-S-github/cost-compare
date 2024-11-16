@@ -1,19 +1,79 @@
-.new-product {
+.add-products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: dashed 1px #5f6368;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #6d8ffc;
+}
+
+button {
+  border: none;
+  background-color: none;
+  background: none;
+  cursor: pointer;
+}
+
+.form-product {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
+  margin: 10px 0px;
+  button {
+    margin: 10px;
+  }
+}
+
+.add-product:hover {
+  color: #476ce5;
+  svg {
+    fill: #476ce5;
+  }
+}
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  color: #5f6368;
+  position: relative;
+}
+.currency-symbol {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
 
 input {
   appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  padding: 4px 6px;
+  font-size: 16px;
+  width: 100%;
+  color: #5f6368;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  color: var(--text-secondary-color);
-  text-align: center;
+}
+.form-field label {
+  width: 50%;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -30,4 +90,10 @@ input[type="number"] {
 /* Edge */
 input[type="number"] {
   -ms-text-overflow: clip;
+}
+
+@media (min-width: 425px) {
+  .add-products {
+    width: 405px;
+  }
 }

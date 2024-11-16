@@ -1,0 +1,10 @@
+app-cost-compare {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 425px) {
+  app-cost-compare {
+    align-items: center;
+  }
+}

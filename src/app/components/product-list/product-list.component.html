@@ -1,5 +1,7 @@
+@if(productsItems().length > 0) {
 <section class="products">
   @for (product of this.productsItems(); track $index) {
   <app-product-item [product]="product"></app-product-item>
   }
 </section>
+}
